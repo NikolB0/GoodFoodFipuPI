@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/"> <i font-awesome-icon icon="fa-solid fa-house"></i> </router-link> |
+      <router-link to="/"> <font-awesome-icon icon="fa-solid fa-house"/> </router-link> |
       <router-link to="/login">Login</router-link> |     
       <router-link to="/signup">Sign Up</router-link> |
       <router-link to="/profile"><font-awesome-icon icon="arrow-alt-circle-left" />Profile</router-link>
