@@ -311,6 +311,11 @@
     margin: 5px;
     text-decoration: none;
   }
+
+  .btn_style:hover {
+    transform: scale(1.1);
+  }
+  
   .form_group > label {
     max-width: 500px;
     text-align: center;

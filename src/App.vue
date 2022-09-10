@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <nav>
+    <!-- <nav >
       <router-link to="/"> <font-awesome-icon icon="fa-solid fa-house"/> </router-link> |
       <router-link to="/login">Login</router-link> |     
       <router-link to="/signup">Sign Up</router-link> |
       <router-link to="/profile"><font-awesome-icon icon="arrow-alt-circle-left" />Profile</router-link>
-    </nav>
+    </nav> -->
     <router-view/>
   </div>
 </template>
@@ -27,6 +27,10 @@
  </script>
 
 <style lang="scss">
+
+  @import url("https://fonts.googleapis.com/css?family=Yeseva+One");
+  @import url("https://fonts.googleapis.com/css?family=Yantramanav");
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,8 +41,8 @@
 }
 
 nav {
-  padding: 30px;
-
+  padding: 20px;
+  z-index: 100;
   a {
     font-weight: bold;
     color: #2c3e50;
