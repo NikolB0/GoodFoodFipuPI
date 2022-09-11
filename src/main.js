@@ -4,12 +4,14 @@ import router from './router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { BContainer } from 'bootstrap-vue'
 
 //import Vuelidate from 'node_modules/vuelidate'
 
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.component('b-container', BContainer)
 //Vue.use.Vuelidate;
 
 //fontawesome icons 

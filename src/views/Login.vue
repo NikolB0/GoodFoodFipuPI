@@ -1,22 +1,19 @@
 <template>
-  <div
+ <div
     class="container"
-    style="max-width: 500px; text-align: left; color:white"
+    style="max-width: 350px; text-align: left; color:white; align-content: center;"
+    padding="50"
   >
-    <form @submit.prevent="handleSubmit">
-      <div class="form-group">
+    <form @submit.prevent="handleSubmit" style="padding-top:5rem; align-content: center;">
+      <div class="form-group" >
         <div v-if="errorMessage" class="alert alert-danger" role="alert">
           Invalid email or password
         </div>
-        <label for="email">
-          Email
-          <span class="text-danger ml-1">*</span>
-        </label>
         <input
           type="email"
           v-model="userForm.email"
           id="email"
-          placeholder="e.g. Bobwills@email.com"
+          placeholder="E-mail"
           name="email"
           class="form-control"
           :class="{ 'is-invalid': isSubmitted && $v.userForm.email.$error }"
@@ -33,10 +30,6 @@
       <br />
 
       <div class="form-group">
-        <label for="password">
-          Password
-          <span class="text-danger ml-1">*</span>
-        </label>
         <input
           type="password"
           v-model="userForm.password"
@@ -78,6 +71,7 @@
 <script>
 // import { firebase } from "@/firebase";
 import { required, email, sameAs } from "vuelidate/lib/validators";
+
 export default {
   name: "Login",
   data() {
@@ -89,6 +83,9 @@ export default {
       errorMessage: "",
       isSubmitted: false
     };
+  },
+  components: {
+    
   },
   validations: {
     userForm: {

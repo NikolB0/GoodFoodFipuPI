@@ -1,5 +1,7 @@
  <template>
-  <div class="carousel" style="display: flex; position: relative">
+  
+  <div class="wrapper" >
+  <div class="carousel" >
     <div style="width: 100%">
       <b-carousel
       id="carousel-1"
@@ -18,17 +20,43 @@
       <b-carousel-slide img-src="src/assets/goodsoup_unsplash.jpg"></b-carousel-slide> 
       <b-carousel-slide img-src="src/assets/goodsoup_unsplash.jpg"></b-carousel-slide> -->
       
+      <div class="carousel-style" >
       <b-carousel-slide
         v-for="item in carouselItems"
         :key= "item.id"
         :img-src= "item.image"
-      ></b-carousel-slide>
-
+      >         
+        <!-- <div class="titles">   
+            <h2 class="front-title">GoodFood</h2>
+            <h4 class="front-subtitle">Keep and share your best recipes</h4> 
+          </div>            -->
+      </b-carousel-slide>
+      
+     </div>
       </b-carousel>  
+
+
     </div>
     
   </div>
+  
+    <div class="title-wrapper">
+      <div class="titles2">   
+            <h2 class="front-title">GoodFood</h2>
+            <h4 class="front-subtitle">Keep and share your best recipes</h4> 
+      </div>  
+    </div>  
 
+    <div class="buttons">            
+      <button type="button" class="btn_style" @click="handleSubmit()">
+        <b>Register</b>
+      </button>            
+      <button type="button" class="btn_style" @click="cancel">
+        <b>Login</b>
+      </button>                  
+    </div>
+
+</div>
 
 </template>
   
@@ -74,6 +102,133 @@ export default {
 </script> 
 
  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <!-- <style >
+<style>
 
-</style> -->
+.wrapper {
+  display: grid;  
+}
+
+.carousel {  
+  display: flex; 
+  position: relative; 
+  align-items: center;
+  grid-column-start: 1;  
+  grid-column-end: 3;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.carousel-style {
+  height: 100vh;  
+  position: relative;
+  align-items: stretch;
+  opacity: 60%;
+}
+
+.carousel-caption {
+  vertical-align: middle !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0 !important;
+  margin-top: 5rem;
+  width: 100%;
+  height: 200px;
+  
+  background-color: rgba(255, 255, 255, 0.7)  
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0 !important;
+  margin-top: 8.5rem;
+  width: 100%;
+  height: 200px;
+  z-index: 1000;  
+  grid-column-start: 1;  
+  grid-column-end: 3;
+  grid-row: 1;
+  background-color: rgba(255, 255, 255, 0.7)  
+}
+
+.titles2 {
+  /* align-self: center;
+  margin: 10 10 10 10;
+  align-content: center;
+  margin: auto auto 10 10; */
+    opacity: 100% !important;
+    position: auto;
+    align-self: center;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     margin-top: 1rem;
+     width: 100%;
+     height: auto;
+
+}
+
+.front-title {
+  opacity: 100%;
+  font-size: 100px;
+  font-family: "Yeseva";
+  font-weight: bold;
+  align-self: center;
+  color: #dd6824;
+  margin-top: 1rem;  
+  padding: 0;
+  line-height: 0.9;
+  
+}
+
+.front-subtitle {  
+  font-family: "Yantramanav", sans-serif;
+  align-self: right;  
+  color: rgb(18, 19, 19) !important;
+  margin-left: 8rem;
+  padding: 0;
+  line-height: 0.7;
+  
+}
+
+.buttons {  
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  z-index: 200;
+}
+
+.btn_style {
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+  background-color: #dd6824;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 5px;
+  text-decoration: none;
+  z-index: 100;
+  
+}
+
+.btn_style:hover {
+  transform: scale(1.1);
+}
+
+</style> 
