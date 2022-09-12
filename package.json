@@ -21,6 +21,7 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.3",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",

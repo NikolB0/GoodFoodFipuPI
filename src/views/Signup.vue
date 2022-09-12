@@ -1,9 +1,14 @@
 <template>
+    <v-container class="background">
     <div
       class="container"
       style="max-width: auto; text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:black"
     >
+      <div class="form-background-style">
       <form @submit.prevent="handleSubmit">
+      <label class="title">
+        Register
+      </label>
         <div class="form-group">
           <div v-if="errorMessage" class="alert alert-danger" role="alert">
             The email address is already in use by another account.
@@ -59,10 +64,6 @@
         <br/>
   
         <div class="form-group">
-          <!-- <label for="email">
-            Email
-            <span class="text-danger ml-1">*</span>
-          </label> -->
           <input
             type="email"
             v-model="userForm.email"
@@ -87,10 +88,6 @@
         <br />
   
         <div class="form-group">
-          <!-- <label for="password">
-            Password
-            <span class="text-danger ml-1">*</span>
-          </label> -->
           <input
             type="password"
             v-model="userForm.password"
@@ -115,10 +112,6 @@
         <br />
   
         <div class="form-group">
-          <!-- <label for="confirmPassword">
-            Repeat password
-            <span class="text-danger ml-1">*</span>
-          </label> -->
           <input
             type="password"
             v-model="userForm.confirmPassword"
@@ -171,21 +164,19 @@
         </div>
         <br />
   
-        <div class="form_group">
-        <v-row>
-            
+        <div class="form_group">            
             <button type="button" class="btn_style" @click="handleSubmit()">
             <b>Register</b>
             </button>            
             <button type="button" class="btn_style" @click="cancel">
             <b>Cancel</b>
-            </button>
-            
-        </v-row>          
+            </button>                 
         </div>
       </form>
+      </div>
       <footer id="footer"></footer>
     </div>
+  </v-container>
   </template>
   
   <script>
@@ -264,7 +255,7 @@
             store.username = that.userForm.username;
             store.currentUser = that.userForm.email;
             store.password = that.userForm.password;
-            that.$router.replace({ name: "Regije" });
+            that.$router.replace({ name: "profile" });
           })
           .catch(error => {
             console.error(error);
@@ -292,14 +283,50 @@
     height: 30px;
     width: 220px;
     border-radius: 4px;
+    padding: 6px 12px;
+    margin: 2px;
     color: #171717;
     outline: none;
     box-shadow: none;
   }
+
   #footer {
     width: 100%;
     height: 100px;
   }
+
+  .background {
+  background: url('@/assets/ella-olsson-unsplash.jpg');
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  max-width: 2000px;
+}
+
+.form-background-style{
+  margin-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  height: fit-content !important;
+  width: fit-content !important;
+  background-color: white !important;
+}
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+  font-weight: 100;
+  font-size: xx-large;
+  max-width: auto;
+  text-align: left;
+  padding: auto;
+  margin-bottom: 15px;
+  color: rgb(44, 44, 44) !important;
+}
   .btn_style{
     background-color: #f5b85c;
     border: none;
@@ -315,11 +342,11 @@
   .btn_style:hover {
     transform: scale(1.1);
   }
-  
-  .form_group > label {
+
+  /* .form_group > label {
     max-width: 500px;
     text-align: center;
     font-weight: 600;
-  }
+  } */
   
   </style>

@@ -1,14 +1,14 @@
 <template>
 <div id="app">    
-    <nav class="navigation" >
+    <nav class="navigation" v-if= "this.$route.name == 'profile' || this.$route.name == 'recipes' || this.$route.name == 'login' || this.$route.name == 'register' ">
         <div class="logo" grid-column="1">        
       <img class="GoodFood" src="@/assets/GoodFoodLogoS.png"  style="size: inherit;"/>
     </div>
     <div class="nav-links" >
-      <router-link to="/" v-if= "$route.name === 'profile' || 'home' || 'register'"> Home </router-link> 
-      <router-link to="/login" v-if= "$route.name === 'profile' || 'home'">   Login </router-link>      
-      <router-link to="/register" v-if= "$route.name === 'profile' || 'home'">  Register</router-link> 
-      <router-link to="/profile" v-if= "$route.name === 'profile' || 'home'"><font-awesome-icon icon="arrow-alt-circle-left" />  Profile </router-link>
+      <!-- <router-link to="/" v-if= "$route.name === 'profile' || 'home' || 'register'"> Home </router-link>  -->      
+      <router-link to="/profile" v-if= "$route.name === 'profile' || $route.name === 'recipes'"><font-awesome-icon icon="arrow-alt-circle-left" />  Profile </router-link>   
+      <router-link to="/recipes" v-if= "$route.name === 'profile' || $route.name === 'recipes'">   Recipes </router-link>         
+      <router-link to="/logout" v-if= "$route.name === 'profile' || $route.name === 'recipes'">  Logout</router-link> 
       <!-- stranica za logout - link se vidi samo nakon logina -->
     </div>
     </nav>

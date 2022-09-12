@@ -14,7 +14,6 @@
 <script>  
   import Header from '@/components/Header.vue';
   import FontAwesomeIcon from '@fortawesome/free-solid-svg-icons';
-  //import FontAwesomeIcon from 'node_modules/free-solid-svg-icons';
   import faHouse from '@fortawesome/free-solid-svg-icons/faHouse';
   
   export default {

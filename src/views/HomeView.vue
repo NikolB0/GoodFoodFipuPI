@@ -41,8 +41,6 @@ export default {
   @import url("https://fonts.googleapis.com/css?family=Yeseva+One:400");
   @import url("https://fonts.googleapis.com/css?family=Yantramanav:400,300");
 
-
-
 /* .middle {
   position: relative;
 } */

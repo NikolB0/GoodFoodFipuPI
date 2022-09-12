@@ -47,13 +47,13 @@
       </div>  
     </div>  
 
-    <div class="buttons">            
-      <button type="button" class="btn_style" @click="handleSubmit()">
+    <div class="buttons">         
+      <button type="button" class="btn_style" @click="$router.push('/register')">
         <b>Register</b>
       </button>            
-      <button type="button" class="btn_style" @click="cancel">
+      <button type="button" class="btn_style" @click="$router.push('/login')">
         <b>Login</b>
-      </button>                  
+      </button>              
     </div>
 
 </div>
@@ -102,10 +102,12 @@ export default {
 </script> 
 
  <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="css" scoped>
+
 
 .wrapper {
   display: grid;  
+  position:relative;
 }
 
 .carousel {  
@@ -197,23 +199,25 @@ export default {
 }
 
 .buttons {  
-  grid-column: 2;
-  grid-row: 1;
   display: flex;
   align-items: center;
   top: 0;
   right: 0;
   bottom: 0;
+  left: 0 !important;
+  margin-top: 18rem;
   width: 100%;
-  height: 100%;
-  margin-top: 0;
-  z-index: 200;
+  height: 200px;
+  z-index: 1000;  
+  grid-column: 2;
+  /*grid-column-start: 1;  
+  grid-column-end: 3; */
+  grid-row: 1;
 }
 
 .btn_style {
-  display: block;
   grid-row: 1;
-  grid-column: 1;
+  grid-column: 2;
   background-color: #dd6824;
   border: none;
   border-radius: 8px;
@@ -223,8 +227,13 @@ export default {
   font-size: 16px;
   margin: 5px;
   text-decoration: none;
-  z-index: 100;
-  
+  z-index: 100;  
+}
+
+v-row {
+  width: 100%;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .btn_style:hover {
