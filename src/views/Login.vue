@@ -2,11 +2,11 @@
 <v-container class="background">
  <div
     class="container"
-    style="max-width: 350px; text-align: left; color:white; align-content: center;"
+    style="max-width: 350px; text-align: left; color:white; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; align-content: center;"
     padding="50"
   >
   <div class="form-background">
-    <form @submit.prevent="handleSubmit" style="padding-top:5rem; align-content: center ; background-color: white !important; width:100% !important;">
+    <form @submit.prevent="handleSubmit" style="padding-top:5rem; align-content: center ; width:100% !important;">
       <div class="form-group" >
         <div v-if="errorMessage" class="alert alert-danger" role="alert">
           Invalid email or password
@@ -70,6 +70,7 @@
 
 <script>
 // import { firebase } from "@/firebase";
+import store from '@/store.js'
 import { required, email, sameAs } from "vuelidate/lib/validators";
 
 export default {
@@ -107,13 +108,13 @@ export default {
       if (this.$v.$invalid) {
         return;
       }
-      console.log("login..." + this.userForm.email);
+      console.log("login check = " + this.userForm.email);
       await firebase
         .auth()
         .signInWithEmailAndPassword(this.userForm.email, this.userForm.password)
         .then(function(result) {
-          console.log("Uspješna prijava.", result);
-          that.$router.replace({ name: "Regije" });
+          console.log("Success.", result);
+          that.$router.replace({ name: "Profile" });
         })
         .catch(error => {
           // Handle Errors here.
@@ -148,6 +149,7 @@ export default {
   color: #000000;
   outline: none;
   box-shadow: none;
+  width: 300px;
 }
 
 .background {
@@ -160,9 +162,8 @@ export default {
 }
 
 .buttons {  
-  display: flex;
-  align-items: start;
-  top: 0;
+  text-align: center;
+  /* top: 0;
   right: 0;
   bottom: 0;
   left: 0 !important;
@@ -175,7 +176,7 @@ export default {
   z-index: 1000;  
   grid-column-start: 1;  
   grid-column-end: 3;
-  grid-row: 1;
+  grid-row: 1; */
 }
 
 .btn_style {
@@ -188,10 +189,15 @@ export default {
   padding: 10px 20px;
   text-align: center;
   font-size: 16px;
-  margin: 5px;
+  width: 100px;
+  margin: 25px 5px 95px;
   text-decoration: none;
   z-index: 100;  
 }
+
+.btn_style:hover {
+    transform: scale(1.1);
+  }
 
 /* .btn_login {
   background-color: #f5b85c;
@@ -207,12 +213,12 @@ export default {
 } */
 
 .form-background{
-  margin-top: 20px;
+  margin-top: 50px;
   padding-left: 40px;
   padding-right: 40px;
   height: fit-content !important;
   width: fit-content !important;
-  background-color: white !important;
+  background-color: rgb(255,255,255,0.7) !important;
 }
 
 .title {

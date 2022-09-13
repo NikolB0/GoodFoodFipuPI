@@ -8,6 +8,7 @@ import { BContainer } from 'bootstrap-vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
+
 Vue.use(Vuetify)
 
 //import Vuelidate from 'node_modules/vuelidate'
@@ -16,7 +17,7 @@ Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.component('b-container', BContainer)
-//Vue.use.Vuelidate;
+Vue.use.Vuelidate;
 
 //fontawesome icons 
 import { library } from '@fortawesome/fontawesome-svg-core';

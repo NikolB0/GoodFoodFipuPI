@@ -45,9 +45,7 @@
             <h2 class="front-title">GoodFood</h2>
             <h4 class="front-subtitle">Keep and share your best recipes</h4> 
       </div>  
-    </div>  
-
-    <div class="buttons">         
+      <div class="buttons">         
       <button type="button" class="btn_style" @click="$router.push('/register')">
         <b>Register</b>
       </button>            
@@ -55,6 +53,9 @@
         <b>Login</b>
       </button>              
     </div>
+    </div>  
+
+    
 
 </div>
 
@@ -78,7 +79,7 @@ export default {
         },
         {
           id: 2,
-          image: require("@/assets/spicespooons_unsplash.png"),
+          image: require("@/assets/spicespooons_unsplash.jpg"),
           
         },
         {
@@ -107,7 +108,8 @@ export default {
 
 .wrapper {
   display: grid;  
-  position:relative;
+  position: relative;
+  align-items: center;
 }
 
 .carousel {  
@@ -141,13 +143,13 @@ export default {
 }
 
 .title-wrapper {
-  display: flex;
+  display: grid;
   align-items: center;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0 !important;
-  margin-top: 8.5rem;
+  
   width: 100%;
   height: 200px;
   z-index: 1000;  
@@ -177,7 +179,7 @@ export default {
 
 .front-title {
   opacity: 100%;
-  font-size: 100px;
+  font-size: 120px;
   font-family: "Yeseva";
   font-weight: bold;
   align-self: center;
@@ -188,7 +190,8 @@ export default {
   
 }
 
-.front-subtitle {  
+.front-subtitle {    
+  font-size: 30px;
   font-family: "Yantramanav", sans-serif;
   align-self: right;  
   color: rgb(18, 19, 19) !important;
@@ -199,20 +202,8 @@ export default {
 }
 
 .buttons {  
-  display: flex;
-  align-items: center;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0 !important;
-  margin-top: 18rem;
-  width: 100%;
-  height: 200px;
-  z-index: 1000;  
-  grid-column: 2;
-  /*grid-column-start: 1;  
-  grid-column-end: 3; */
-  grid-row: 1;
+  grid-row: 2; 
+  margin-top: 2rem;
 }
 
 .btn_style {
@@ -222,10 +213,11 @@ export default {
   border: none;
   border-radius: 8px;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 5px;
+  width: 180px;
   text-align: center;
   font-size: 16px;
-  margin: 5px;
+  margin: 5px 10px 5px 10px;
   text-decoration: none;
   z-index: 100;  
 }

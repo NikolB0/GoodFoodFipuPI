@@ -18,7 +18,7 @@
   
   export default {
    components:{
-     'font-awesome-icon' : FontAwesomeIcon,
+     //'font-awesome-icon' : FontAwesomeIcon,
       Header
    },
    computed:{

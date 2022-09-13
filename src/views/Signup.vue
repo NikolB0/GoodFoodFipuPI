@@ -2,7 +2,7 @@
     <v-container class="background">
     <div
       class="container"
-      style="max-width: auto; text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:black"
+      style="max-width: auto; text-align: left; align-items: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:black"
     >
       <div class="form-background-style">
       <form @submit.prevent="handleSubmit">
@@ -164,7 +164,7 @@
         </div>
         <br />
   
-        <div class="form_group">            
+        <div class="buttons">            
             <button type="button" class="btn_style" @click="handleSubmit()">
             <b>Register</b>
             </button>            
@@ -174,18 +174,18 @@
         </div>
       </form>
       </div>
-      <footer id="footer"></footer>
     </div>
   </v-container>
   </template>
   
   <script>
-//   import { firebase } from "@/firebase";
+ // import { firebase } from "@/firebase";
+  //import { useVuelidate } from "vuelidate/core";
   import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
-//   import { db } from "@/firebase";
-//   import store from "@/store";
+  //import { db } from "@/firebase";
+  //import store from "@/store";
   export default {
-    name: "Registracija",
+    name: "Register",
     data() {
       return {
         userForm: {
@@ -241,7 +241,7 @@
             that.userForm.email,
             that.userForm.password
           )
-          .then(function() {
+          .then(function() {                     //nakon sto se prethodna f zavrsila
             const id = that.userForm.email;
             db.collection("users")
               .doc(id)
@@ -258,7 +258,7 @@
             that.$router.replace({ name: "profile" });
           })
           .catch(error => {
-            console.error(error);
+            console.error("An error",error);
             this.errorMessage = error.message;
           });
       },
@@ -278,7 +278,7 @@
   #confirmPassword {
     /* margin-bottom: 8px;
     margin-top: 10px; */
-    border: 3px solid #f5b85c;
+    /* border: 3px solid #f5b85c;
     background-color: whitesmoke;
     height: 30px;
     width: 220px;
@@ -287,12 +287,16 @@
     margin: 2px;
     color: #171717;
     outline: none;
+    box-shadow: none; */
+    
+    margin-bottom: 2px;
+    margin-top: 2px;
+    border: 2px solid #dd6824;
+    background-color: transparent;
+    color: #000000;
+    outline: none;
     box-shadow: none;
-  }
-
-  #footer {
-    width: 100%;
-    height: 100px;
+    width: 300px;
   }
 
   .background {
@@ -305,42 +309,51 @@
 }
 
 .form-background-style{
-  margin-top: 20px;
+  grid-column: 2;  
+  margin-top: 10px;
   padding-left: 40px;
   padding-right: 40px;
   height: fit-content !important;
   width: fit-content !important;
-  background-color: white !important;
+  background-color: rgb(255,255,255,0.8) !important;
 }
 
   .container {
-    display: flex;
+    display: grid;
     align-items: center;
-  }
+}
 
   .title {
-  font-weight: 100;
-  font-size: xx-large;
-  max-width: auto;
-  text-align: left;
-  padding: auto;
-  margin-bottom: 15px;
-  color: rgb(44, 44, 44) !important;
+    font-weight: 200;
+    font-size: xx-large;
+    max-width: auto;
+    text-align: left;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: rgb(44, 44, 44) !important;
 }
   .btn_style{
-    background-color: #f5b85c;
+    background-color: #dd6824;
     border: none;
     border-radius: 8px;
-    color: black;
+    color: white;
     padding: 10px 20px;
     text-align: center;
     font-size: 16px;
+    width: 100px;
     margin: 5px;
     text-decoration: none;
+    z-index: 100; 
   }
 
   .btn_style:hover {
     transform: scale(1.1);
+  }
+
+  .buttons {
+    margin-bottom: 25px;    
+    text-align: center;
+    width: 100%;
   }
 
   /* .form_group > label {
